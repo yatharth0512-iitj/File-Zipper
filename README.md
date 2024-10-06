@@ -82,7 +82,6 @@ For sending the above string over a network, we have to send the tree as well as
 | C         | 6         | 0    | 6*1 = 6  |
 | D         | 3         | 101  | 3*3 = 9  |
 
-4 * 8 = 32 bits    15 bits           28 bits
 
  
 
@@ -94,7 +93,6 @@ For decoding the code, we can take the code and traverse through the tree to fin
 Let 101 is to be decoded, we can traverse from the root as in the figure below.
 
 ![image](https://user-images.githubusercontent.com/22562694/120909632-711b3500-c694-11eb-92b6-83da3cbfb91c.png)
-Decoding
 
 
 
