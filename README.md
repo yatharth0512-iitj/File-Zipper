@@ -75,13 +75,15 @@ Assign 0 to the left edge and 1 to the right edge
 For sending the above string over a network, we have to send the tree as well as the above compressed-code. The total size is given by the table below.
 
 
-Character	       Frequency  	Code	  Size
-A	                  5	        11	   5*2 = 10
-B	                  1	        100	   1*3 = 3
-C         	        6	         0	   6*1 = 6
-D	                  3	        101	   3*3 = 9
+| Character | Frequency | Code | Size     |
+|-----------|-----------|------|----------|
+| A         | 5         | 11   | 5*2 = 10 |
+| B         | 1         | 100  | 1*3 = 3  |
+| C         | 6         | 0    | 6*1 = 6  |
+| D         | 3         | 101  | 3*3 = 9  |
 
-4 * 8 = 32 bits	  15 bits	 	         28 bits
+4 * 8 = 32 bits    15 bits           28 bits
+
  
 
 Without encoding, the total size of the string was 120 bits. After encoding the size is reduced to 32 + 15 + 28 = 75.
