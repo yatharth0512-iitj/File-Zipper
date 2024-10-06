@@ -60,11 +60,11 @@ Getting the sum of the Least numbers
 
 ![image](https://user-images.githubusercontent.com/22562694/120909564-d1f63d80-c693-11eb-8e6a-681dc5c09441.png)
 
-Repeat steps 3 to 5 for all the characters.
+
 
 ![image](https://user-images.githubusercontent.com/22562694/120909567-dae70f00-c693-11eb-874e-bda5c6e294a3.png)
 
-Repeat steps 3 to 5 for all the characters.
+
 
 8.For each non-leaf node, assign 0 to the left edge and 1 to the right edge.
 
