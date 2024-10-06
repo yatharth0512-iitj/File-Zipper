@@ -1,27 +1,44 @@
-# File-Zipper using Huffman-Coding
+# HuffCompress using Huffman-Coding
 
 Huffman Coding (HC) is a technique of Compressing data to reduce its size without losing any of the details. David Huffman first developed it.
 
 HC is generally useful to compress the data in which there are frequently occurring characters.
 
-## Huffman Coding algorithm -
+## Running the Program
 
-Create a Priority Queue Q consisting of each unique character.
-Sort then in ascending order of their frequencies.
-for all the unique characters:
-    Create a newNode
-    extract minimum value from Q and assign it to leftChild of newNode
-    extract minimum value from Q and assign it to rightChild of newNode
-    calculate the sum of these two minimum values and assign it to the value of newNode
-    insert this newNode into the tree
-    
-return rootNode
+1. **Clone the repository.**
+   - The repository consists of a sample text file of size 715kB.
+
+2. **Run the Python code `useHuffman.py` to compress & decompress the given sample file.**
+   - For example, open terminal and run:
+     ```sh
+     python3 useHuffman.py
+     ```
+   - The above command will perform compression and decompression on the `sample.txt` file present in the repository.
+   - Both the compressed and decompressed files will be present at the same location.
+
+3. **To run the code for compression of any other text file:**
+   - Edit the `path` variable in the `useHuffman.py` file to point to the desired text file.
+
+
+
+## Huffman Coding algorithm
+
+1. **Create a Priority Queue `Q` consisting of each unique character.**
+2. **Sort them in ascending order of their frequencies.**
+3. **For all the unique characters:**
+   - Create a `newNode`.
+   - Extract the minimum value from `Q` and assign it to `leftChild` of `newNode`.
+   - Extract the minimum value from `Q` and assign it to `rightChild` of `newNode`.
+   - Calculate the sum of these two minimum values and assign it to the value of `newNode`.
+   - Insert this `newNode` into the tree.
+
+4. **Return `rootNode`.**
 
 ## How Huffman Coding works?
 Suppose the string below is to be sent over a network.
 
 ![image](https://user-images.githubusercontent.com/22562694/120909515-6c09b600-c693-11eb-8a4c-1c2c2ad2537f.png)
-Initial string
 
 Each character occupies 8 bits. There are a total of 15 characters in the above string. Thus, a total of 8 * 15 = 120 bits are required to send this string.
 
@@ -33,30 +50,27 @@ Once the data is encoded, it has to be decoded. Decoding is done using the same 
 
 Huffman Coding prevents any ambiguity in the decoding process using the concept of prefix code ie. a code associated with a character should not be present in the prefix of any other code. The tree created above helps in maintaining the property.
 
-## Algorithm
+## In depth Explaination
 
-1.Calculate the frequency of each character in the string.
+1. Calculate the frequency of each character in the string.
 
 ![image](https://user-images.githubusercontent.com/22562694/120909529-893e8480-c693-11eb-87ae-20c9c6705d6d.png)
-Frequency of string
 
-2.Sort the characters in increasing order of the frequency. These are stored in a priority queue Q.
+2. Sort the characters in increasing order of the frequency. These are stored in a priority queue Q.
 
 ![image](https://user-images.githubusercontent.com/22562694/120909537-9a879100-c693-11eb-937f-9b4870c88d6d.png)
-Characters sorted according to the frequency
 
-3.Make each unique character as a leaf node.
+3. Make each unique character as a leaf node.
 
-4.Create an empty node z. Assign the minimum frequency to the left child of z and assign the second minimum frequency to the right child of z. Set the value of the z as the sum of the above two minimum frequencies.
+4. Create an empty node z. Assign the minimum frequency to the left child of z and assign the second minimum frequency to the right child of z. Set the value of the z as the sum of the above two minimum frequencies.
 
 ![image](https://user-images.githubusercontent.com/22562694/120909559-bc811380-c693-11eb-85a6-597f9bd4e328.png)
-Getting the sum of the Least numbers
 
-5.Remove these two minimum frequencies from Q and add the sum into the list of frequencies (* denote the internal nodes in the figure above).
+5. Remove these two minimum frequencies from Q and add the sum into the list of frequencies (* denote the internal nodes in the figure above).
 
-6.Insert node z into the tree.
+6. Insert node z into the tree.
 
-7.Repeat steps 3 to 5 for all the characters.
+7. Repeat steps 3 to 5 for all the characters.
 
 ![image](https://user-images.githubusercontent.com/22562694/120909564-d1f63d80-c693-11eb-8e6a-681dc5c09441.png)
 
@@ -66,11 +80,10 @@ Getting the sum of the Least numbers
 
 
 
-8.For each non-leaf node, assign 0 to the left edge and 1 to the right edge.
+8. For each non-leaf node, assign 0 to the left edge and 1 to the right edge.
 
 ![image](https://user-images.githubusercontent.com/22562694/120909576-edf9df00-c693-11eb-8d05-eb837d93a3c0.png)
 
-Assign 0 to the left edge and 1 to the right edge
 
 For sending the above string over a network, we have to send the tree as well as the above compressed-code. The total size is given by the table below.
 
