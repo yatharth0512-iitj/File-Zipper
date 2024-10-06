@@ -53,18 +53,23 @@ Characters sorted according to the frequency
 Getting the sum of the Least numbers
 
 5.Remove these two minimum frequencies from Q and add the sum into the list of frequencies (* denote the internal nodes in the figure above).
+
 6.Insert node z into the tree.
+
 7.Repeat steps 3 to 5 for all the characters.
 
 ![image](https://user-images.githubusercontent.com/22562694/120909564-d1f63d80-c693-11eb-8e6a-681dc5c09441.png)
+
 Repeat steps 3 to 5 for all the characters.
 
 ![image](https://user-images.githubusercontent.com/22562694/120909567-dae70f00-c693-11eb-874e-bda5c6e294a3.png)
+
 Repeat steps 3 to 5 for all the characters.
 
 8.For each non-leaf node, assign 0 to the left edge and 1 to the right edge.
 
 ![image](https://user-images.githubusercontent.com/22562694/120909576-edf9df00-c693-11eb-8d05-eb837d93a3c0.png)
+
 Assign 0 to the left edge and 1 to the right edge
 
 For sending the above string over a network, we have to send the tree as well as the above compressed-code. The total size is given by the table below.
